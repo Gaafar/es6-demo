@@ -13,7 +13,8 @@ fs.readdir(dirPath, (err, files) => {
         },
         (err, results) => {
             const urls = results.map((file) => `[link] 
-[link]<${babelUrl + encodeURIComponent(file)}>`)
+
+[link]: <${babelUrl + encodeURIComponent(file)}>`)
             console.log(urls)
 
             const str = urls.reduce((u1, u2) => { u1 + u2 })
