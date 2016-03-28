@@ -1,23 +1,34 @@
 const fs = require('fs-extra')
 const async = require('async')
+var _ = require('lodash')
 
-const babelUrl = 'https://babeljs.io/repl/#?evaluate=true&presets=stage-3&code='
+const babelSourceUrl = 'https://babeljs.io/repl/#?evaluate=true&presets=stage-3&code='
+const babelCompiledUrl = 'https://babeljs.io/repl/#?evaluate=true&presets=es2015%2Cstage-3&code='
 const dirPath = `${__dirname}/../demos`
 
-fs.readdir(dirPath, (err, files) => {
-    console.log(files)
+fs.readdir(dirPath, (err, fileNames) => {
+    console.log(fileNames)
 
-    async.map(files,
-        (file, cb) => {
-            fs.readFile(`${dirPath}/${file}`, 'utf8', cb)
+    async.map(fileNames,
+        (fileName, cb) => {
+            fs.readFile(`${dirPath}/${fileName}`, 'utf8', cb)
         },
-        (err, results) => {
-            const urls = results.map((file) => `[link] 
+        (err, fileContents) => {
+        	const pairs = _.zip(fileNames,fileContents)
+        	const readme = _(pairs)
+        	.map((pair)=>{
+        		fileName = pair[0]
+        		fileContent = pair[1]
+        		const title = fileName.replace(/.js$/,'')
+        		return `## ${title}       		
+\`\`\` 
+${fileContent}
+\`\`\`
+<a target="_blank" href="${babelSourceUrl + encodeURIComponent(fileContent)}">Try ES6</a> - <a target="_blank" href="${babelCompiledUrl + encodeURIComponent(fileContent)}">ES5</a>
+`
+        	})
+        	.reduce((u1, u2) => u1 + "\n" + u2 )
 
-[link]: <${babelUrl + encodeURIComponent(file)}>`)
-            console.log(urls)
-
-            const str = urls.reduce((u1, u2) => { u1 + u2 })
-            fs.outputFile(`${__dirname}/../README.md`, str)
+            fs.outputFile(`${__dirname}/../README.md`, readme)
         })
 })
