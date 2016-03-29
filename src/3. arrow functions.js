@@ -23,4 +23,16 @@ const add = (a, b) => a + b
 console.log(add(1,2)) //3
 
 // 4. Lexical this
-// TODO: 
+const operations = {
+  input: [1, 2, 3, 4],
+  value: 2,
+  add: function () {
+    return this.input.map(function(el){return el + this.value})
+  },
+  addArrow: function () {
+    return this.input.map((el) => el + this.value)
+  }
+}
+
+console.log(operations.add()) // [null,null,null,null]
+console.log(operations.addArrow()) // [3,4,5,6]

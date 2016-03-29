@@ -4,7 +4,7 @@ var _ = require('lodash')
 
 const babelSourceUrl = 'https://babeljs.io/repl/#?evaluate=true&presets=stage-3&code='
 const babelCompiledUrl = 'https://babeljs.io/repl/#?evaluate=true&presets=es2015%2Cstage-3&code='
-const dirPath = `${__dirname}/../demos`
+const dirPath = `${__dirname}/../src`
 
 fs.readdir(dirPath, (err, fileNames) => {
     console.log(fileNames)
@@ -24,7 +24,7 @@ fs.readdir(dirPath, (err, fileNames) => {
 \`\`\` 
 ${fileContent}
 \`\`\`
-<a target="_blank" href="${babelSourceUrl + encodeURIComponent(fileContent)}">Try ES6</a> - <a target="_blank" href="${babelCompiledUrl + encodeURIComponent(fileContent)}">ES5</a>
+<a target="_blank" href="${babelSourceUrl + encodeURIComponent(fileContent)}">Try ES6</a> - <a target="_blank" href="${babelCompiledUrl + encodeURIComponent(fileContent)}">Transpiled</a>
 `
         	})
         	.reduce((u1, u2) => u1 + "\n" + u2 )
