@@ -21,7 +21,7 @@ fs.readdir(dirPath, (err, fileNames) => {
         		fileContent = pair[1]
         		const title = fileName.replace(/.js$/,'')
         		return `## ${title}       		
-\`\`\` 
+\`\`\`javascript
 ${fileContent}
 \`\`\`
 <a target="_blank" href="${babelSourceUrl + encodeURIComponent(fileContent)}">Try ES6</a> - <a target="_blank" href="${babelCompiledUrl + encodeURIComponent(fileContent)}">Transpiled</a>

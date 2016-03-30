@@ -20,6 +20,6 @@
   "dependencies": {
     "async": "^2.0.0-rc.2",
     "fs-extra": "^0.26.7",
-    "lo-dash": "^1.0.0"
+    "lodash": "^4.6.1"
   }
 }
