@@ -226,10 +226,10 @@ function* fibonacci(n) {
     }
 }
 
-let numbers = [...fibonacci(10)]
+const numbers = [...fibonacci(10)]
 
 console.log(numbers) // [1,2,3,5,8,13,21,34,55,89]
 
 // TODO: class, promise
 ```
-<a target="_blank" href="https://babeljs.io/repl/#?evaluate=true&presets=stage-3&code=function*%20fibonacci(n)%20%7B%0A%20%20%20%20let%20pre%20%3D%200%2C%20cur%20%3D%201%0A%20%20%20%20while%20(n--%20%3E%200)%20%7B%0A%20%20%20%20%20%20%20%20%5Bpre%2C%20cur%5D%20%3D%20%5Bcur%2C%20pre%20%2B%20cur%5D%0A%20%20%20%20%20%20%20%20yield%20cur%0A%20%20%20%20%7D%0A%7D%0A%0Alet%20numbers%20%3D%20%5B...fibonacci(10)%5D%0A%0Aconsole.log(numbers)%20%2F%2F%20%5B1%2C2%2C3%2C5%2C8%2C13%2C21%2C34%2C55%2C89%5D%0A%0A%2F%2F%20TODO%3A%20class%2C%20promise">Try ES6</a> - <a target="_blank" href="https://babeljs.io/repl/#?evaluate=true&presets=es2015%2Cstage-3&code=function*%20fibonacci(n)%20%7B%0A%20%20%20%20let%20pre%20%3D%200%2C%20cur%20%3D%201%0A%20%20%20%20while%20(n--%20%3E%200)%20%7B%0A%20%20%20%20%20%20%20%20%5Bpre%2C%20cur%5D%20%3D%20%5Bcur%2C%20pre%20%2B%20cur%5D%0A%20%20%20%20%20%20%20%20yield%20cur%0A%20%20%20%20%7D%0A%7D%0A%0Alet%20numbers%20%3D%20%5B...fibonacci(10)%5D%0A%0Aconsole.log(numbers)%20%2F%2F%20%5B1%2C2%2C3%2C5%2C8%2C13%2C21%2C34%2C55%2C89%5D%0A%0A%2F%2F%20TODO%3A%20class%2C%20promise">Transpiled</a>
+<a target="_blank" href="https://babeljs.io/repl/#?evaluate=true&presets=stage-3&code=function*%20fibonacci(n)%20%7B%0A%20%20%20%20let%20pre%20%3D%200%2C%20cur%20%3D%201%0A%20%20%20%20while%20(n--%20%3E%200)%20%7B%0A%20%20%20%20%20%20%20%20%5Bpre%2C%20cur%5D%20%3D%20%5Bcur%2C%20pre%20%2B%20cur%5D%0A%20%20%20%20%20%20%20%20yield%20cur%0A%20%20%20%20%7D%0A%7D%0A%0Aconst%20numbers%20%3D%20%5B...fibonacci(10)%5D%0A%0Aconsole.log(numbers)%20%2F%2F%20%5B1%2C2%2C3%2C5%2C8%2C13%2C21%2C34%2C55%2C89%5D%0A%0A%2F%2F%20TODO%3A%20class%2C%20promise">Try ES6</a> - <a target="_blank" href="https://babeljs.io/repl/#?evaluate=true&presets=es2015%2Cstage-3&code=function*%20fibonacci(n)%20%7B%0A%20%20%20%20let%20pre%20%3D%200%2C%20cur%20%3D%201%0A%20%20%20%20while%20(n--%20%3E%200)%20%7B%0A%20%20%20%20%20%20%20%20%5Bpre%2C%20cur%5D%20%3D%20%5Bcur%2C%20pre%20%2B%20cur%5D%0A%20%20%20%20%20%20%20%20yield%20cur%0A%20%20%20%20%7D%0A%7D%0A%0Aconst%20numbers%20%3D%20%5B...fibonacci(10)%5D%0A%0Aconsole.log(numbers)%20%2F%2F%20%5B1%2C2%2C3%2C5%2C8%2C13%2C21%2C34%2C55%2C89%5D%0A%0A%2F%2F%20TODO%3A%20class%2C%20promise">Transpiled</a>

@@ -6,7 +6,7 @@ function* fibonacci(n) {
     }
 }
 
-let numbers = [...fibonacci(10)]
+const numbers = [...fibonacci(10)]
 
 console.log(numbers) // [1,2,3,5,8,13,21,34,55,89]
 
